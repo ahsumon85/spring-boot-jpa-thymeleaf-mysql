@@ -50,7 +50,7 @@ public class EmployeeController {
 		EmployeeDTO employeeDTO = employeeService.getEmployeeById(id);
 
 		// set employee as a model attribute to pre-populate the form
-		modelAndView.addObject("employee", employeeDTO);
+		modelAndView.addObject("employeeDTO", employeeDTO);
 		modelAndView.setViewName("update_employee");
 		return modelAndView;
 	}
