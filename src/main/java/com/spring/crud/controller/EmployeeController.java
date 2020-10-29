@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.crud.model.entity.Employee;
 import com.spring.crud.service.EmployeeService;
@@ -20,14 +21,16 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService employeeService;
-	
+
 	// display list of employees
 	@GetMapping("/")
-	public String viewHomePage(Model model) {
+	public ModelAndView viewHomePage(Model model) {
+		ModelAndView modelAndView = new ModelAndView();
 		model.addAttribute("listEmployees", employeeService.getAllEmployees());
-		return "index";	
+		modelAndView.setViewName("index");
+		return modelAndView;
 	}
-	
+
 	@GetMapping("/showNewEmployeeForm")
 	public String showNewEmployeeForm(Model model) {
 		// create model attribute to bind form data
@@ -35,31 +38,31 @@ public class EmployeeController {
 		model.addAttribute("employee", employee);
 		return "new_employee";
 	}
-	
+
 	@PostMapping("/saveEmployee")
 	public String saveEmployee(@ModelAttribute("employee") Employee employee) {
 		// save employee to database
 		employeeService.saveEmployee(employee);
 		return "redirect:/";
 	}
-	
+
 	@GetMapping("/showFormForUpdate/{id}")
-	public String showFormForUpdate(@PathVariable ( value = "id") long id, Model model) {
-		
+	public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
+
 		// get employee from the service
 		Employee employee = employeeService.getEmployeeById(id);
-		
+
 		// set employee as a model attribute to pre-populate the form
 		model.addAttribute("employee", employee);
 		return "update_employee";
 	}
-	
+
 	@GetMapping("/deleteEmployee/{id}")
-	public String deleteEmployee(@PathVariable (value = "id") long id) {
-		
-		// call delete employee method 
+	public String deleteEmployee(@PathVariable(value = "id") long id) {
+
+		// call delete employee method
 		this.employeeService.deleteEmployeeById(id);
 		return "redirect:/";
 	}
-	
+
 }
