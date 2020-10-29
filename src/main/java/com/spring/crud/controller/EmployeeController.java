@@ -31,14 +31,14 @@ public class EmployeeController {
 	@GetMapping("/showNewEmployeeForm")
 	public ModelAndView showNewEmployeeForm() {
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("employee", new Employee());
+		modelAndView.addObject("employeeDTO", new EmployeeDTO());
 		modelAndView.setViewName("new_employee");
 		return modelAndView;
 	}
 
 	// save employee to database
 	@PostMapping("/saveEmployee")
-	public String saveEmployee(@ModelAttribute("employee") EmployeeDTO employeeDTO) {
+	public String saveEmployee(@ModelAttribute("employeeDTO") EmployeeDTO employeeDTO) {
 		employeeService.saveEmployee(employeeDTO);
 		return "redirect:/";
 	}
