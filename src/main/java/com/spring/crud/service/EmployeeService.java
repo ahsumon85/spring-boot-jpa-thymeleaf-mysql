@@ -2,17 +2,15 @@ package com.spring.crud.service;
 
 import java.util.List;
 
-import org.springframework.data.domain.Page;
-
-import com.spring.crud.model.entity.Employee;
+import com.spring.crud.model.dto.EmployeeDTO;
 
 public interface EmployeeService {
 	
-	List<Employee> getAllEmployees();
+	List<EmployeeDTO> getAllEmployees();
 
-	void saveEmployee(Employee employee);
+	void saveEmployee(EmployeeDTO employeeDTO);
 
-	Employee getEmployeeById(long id);
+	EmployeeDTO getEmployeeById(long id);
 
 	void deleteEmployeeById(long id);
 }

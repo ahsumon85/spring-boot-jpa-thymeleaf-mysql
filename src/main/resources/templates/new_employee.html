@@ -12,7 +12,7 @@
 	<div class="container" style="margin-top: 5%">
 	
 
-		<form action="#" th:action="@{/saveEmployee}" th:object="${employee}"
+		<form th:action="@{/saveEmployee}" th:object="${employeeDTO}"
 			method="POST">
 			<input type="text" th:field="*{firstName}"
 				placeholder="First Name" class="form-control mb-4 col-4">
