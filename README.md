@@ -12,7 +12,7 @@ In this repository we will see simple CRUD Application on MVC Pattern technology
 
 ## How to run?
 
-### Import spring-boot-security
+### springboot-jpa-thymeleaf-mysql-crud
 1. `$ clone git https://github.com/ahasanhabibsumon/springboot-jpa-thymeleaf-mysql-crud.git`
 2. `cd springboot-jpa-thymeleaf-mysql-crud`
 3. `$ mvn clean install`
@@ -20,7 +20,7 @@ In this repository we will see simple CRUD Application on MVC Pattern technology
 5. or import maven project on IDE 
 
 ### MySQL database configuration
-1. change database `user_name` and `password`.
+1. change database your`user_name` and `password`.
 2. `create database spring_crud;`
 
 ### Run spring-boot-security project
