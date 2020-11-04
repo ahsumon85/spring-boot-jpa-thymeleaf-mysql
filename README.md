@@ -23,5 +23,5 @@ In this repository we will see simple CRUD Application on MVC Pattern technology
 1. change your database `userName` and `password`.
 2. `create database spring_crud;`
 
-### Run spring-boot-security project
+### Run springboot-jpa-thymeleaf-mysql-crud project
 Go to browser and enter URL `http://localhost:8081`
