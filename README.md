@@ -20,7 +20,8 @@ In this repository we will see simple CRUD Application on MVC Pattern technology
 5. or import maven project on IDE 
 
 ### MySQL database configuration
-1. change your database `userName` and `password`.
+
+1. change database `userName` and `password` on `application.properties` file.
 2. `create database spring_crud;`
 
 ### Run springboot-jpa-thymeleaf-mysql-crud project
